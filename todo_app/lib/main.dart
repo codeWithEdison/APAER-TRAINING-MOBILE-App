@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/navigation.dart';
 
 void main() {
   runApp(TodoApp());
@@ -13,7 +14,7 @@ class TodoApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TodoHome(),
+      home: FirtScreen(),
     );
   }
 }
@@ -91,7 +92,7 @@ class _TodoHomeState extends State<TodoHome> {
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME"),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: "settings"),
+        BottomNavigationBarItem(icon: Icon(Icons.settings), label: "settings"), 
       ],
       currentIndex: activeIndex ,
       onTap: (int index) => {
