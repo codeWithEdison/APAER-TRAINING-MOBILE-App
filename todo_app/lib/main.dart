@@ -25,6 +25,7 @@ class TodoHome extends StatefulWidget {
 
 class _TodoHomeState extends State<TodoHome> {
   List<String> tasks = [];
+  int activeIndex = 0;
   TextEditingController taskController = TextEditingController();
 
   void addTask() {
@@ -87,6 +88,20 @@ class _TodoHomeState extends State<TodoHome> {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME"),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
+        BottomNavigationBarItem(icon: Icon(Icons.settings), label: "settings"),
+      ],
+      currentIndex: activeIndex ,
+      onTap: (int index) => {
+        setState(() {
+          activeIndex = index;
+        })
+      },
+      ),
+      
+    
     );
   }
 }
